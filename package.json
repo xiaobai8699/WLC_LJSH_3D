@@ -18,5 +18,9 @@
   "homepage": "https://github.com/lh2lyc/WLC_LJSH_3D#readme",
   "dependencies": {
     "three": "^0.113.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }

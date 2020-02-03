@@ -1,5 +1,5 @@
 
-## 开发工具
+### 开发工具
 工具 | 说明 
 ----|-----
 [vscode](https://code.visualstudio.com/) |
@@ -7,8 +7,13 @@
 [webpack](https://webpack.docschina.org/) | 
 [npm](https://docs.npmjs.com/) | 
 
+### 调试工具
+工具 | 说明
+----|----
+[stats.js](https://github.com/mrdoob/stats.js)|
+[dat.gui](https://github.com/dataarts/dat.gui)|
 
-## 技术栈
+### 技术栈
 技术 | 说明 
 ----|-----
 [typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |

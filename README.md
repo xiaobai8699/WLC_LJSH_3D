@@ -12,6 +12,7 @@
 ----|----
 [stats.js](https://github.com/mrdoob/stats.js)|
 [dat.gui](https://github.com/dataarts/dat.gui)|
+[WebVR API Emulation](https://chrome.google.com/webstore/detail/webvr-api-emulation/gbdnpaebafagioggnhkacnaaahpiefil)|使用WebVR API Emulation扩展程序可以模拟VR设备用户的视角、位置等
 
 ### 技术栈
 技术 | 说明 

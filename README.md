@@ -1,6 +1,6 @@
 
 ## 开发工具
-技术 | 说明 
+工具 | 说明 
 ----|-----
 [node.js](http://nodejs.cn/) | 
 [webpack](https://webpack.docschina.org/) | 

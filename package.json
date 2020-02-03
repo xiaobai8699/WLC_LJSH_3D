@@ -1,0 +1,22 @@
+{
+  "name": "wlc_ljsh_3d",
+  "version": "1.0.0",
+  "description": "万绿城 绿景山湖 3d应用",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lh2lyc/WLC_LJSH_3D.git"
+  },
+  "author": "lh.work@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lh2lyc/WLC_LJSH_3D/issues"
+  },
+  "homepage": "https://github.com/lh2lyc/WLC_LJSH_3D#readme",
+  "dependencies": {
+    "three": "^0.113.2"
+  }
+}

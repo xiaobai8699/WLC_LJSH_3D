@@ -2,10 +2,11 @@
 ## 开发工具
 工具 | 说明 
 ----|-----
+[vscode](https://code.visualstudio.com/) |
 [node.js](http://nodejs.cn/) | 
 [webpack](https://webpack.docschina.org/) | 
 [npm](https://docs.npmjs.com/) | 
-[vscode](https://code.visualstudio.com/) |
+
 
 ## 技术栈
 技术 | 说明 

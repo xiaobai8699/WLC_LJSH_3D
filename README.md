@@ -24,10 +24,12 @@
 ### 技术栈
 技术 | 说明 
 ----|-----
-[typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |
-[HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)、[CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)、[Sass](https://sass-guidelin.es/zh/#section-38)
-[three.js](https://threejs.org/)、[WebGL](https://book.douban.com/subject/25909351/) |[three.js版本为0.113.2](https://github.com/mrdoob/three.js/releases/tag/r113)
 [基本三角学](http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2FKhan%2Ftrigonometry.html)、[3D数学基础](https://book.douban.com/subject/1400419/)、[线性代数](http://immersivemath.com/ila/index.html)|
+[typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |
+[HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)、[CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)、[Sass](https://sass-guidelin.es/zh/#section-38)|
+[three.js](https://threejs.org/)、[WebGL](https://book.douban.com/subject/25909351/)| 
+[WebVR API](https://developer.mozilla.org/zh-CN/docs/Web/API/WebVR_API)|
+
 
 ## WebXR相关教程
 标题|说明

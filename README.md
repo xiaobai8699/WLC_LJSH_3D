@@ -36,6 +36,7 @@
 ---|---
 [Google WebVR入门教程](https://developers.google.cn/web/fundamentals/vr) | 适合入门
 [如何通过Three.js创建VR应用](https://developers.google.cn/web/fundamentals/vr)| 介绍如何使用Three.js创建VR应用
+[An Intro to WebVR](https://glitch.com/culture/an-intro-to-webvr/)| 介绍通过A-Frame框架创建WebVR应用
 [浅谈WebVR](https://aotu.io/notes/2016/08/24/2016-8-24-webvr/)|
 [WebVR.info](https://webvr.info/) | 介绍各种VR头显对浏览器的支持情况
 [火狐WebXR团队](https://mixedreality.mozilla.org/#team)| 有WebVR相关教程

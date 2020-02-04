@@ -1,9 +1,9 @@
 ## 介绍
 
 ## 使用
+> npm install
 
 ## 目录结构
-> npm install
 
 ## 技术
 ### 开发工具

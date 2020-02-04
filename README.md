@@ -23,6 +23,16 @@
 [three.js](https://threejs.org/)、[WebGL](https://book.douban.com/subject/25909351/) |[three.js版本为0.113.2](https://github.com/mrdoob/three.js/releases/tag/r113)
 [基本三角学](http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2FKhan%2Ftrigonometry.html)、[3D数学基础](https://book.douban.com/subject/1400419/)、[线性代数](http://immersivemath.com/ila/index.html)|
 
+## 参考
+标题|说明
+---|---
+[Google WebVR入门教程](https://developers.google.cn/web/fundamentals/vr) | 适合入门
+[如何通过Three.js创建VR应用](https://developers.google.cn/web/fundamentals/vr)| 介绍如何使用Three.js创建VR应用
+[浅谈WebVR](https://aotu.io/notes/2016/08/24/2016-8-24-webvr/)|
+[WebVR.info](https://webvr.info/) | 介绍各种VR头显对浏览器的支持情况
+[火狐WebXR团队](https://mixedreality.mozilla.org/#team)| 有WebVR相关教程
+[WebXR技术专栏](https://zhuanlan.zhihu.com/webxr) | 
+
 ## 目录结构
 
 ## 使用

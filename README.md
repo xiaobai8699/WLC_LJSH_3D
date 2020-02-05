@@ -21,11 +21,18 @@
 [dat.gui](https://github.com/dataarts/dat.gui)|
 [WebVR API Emulation](https://chrome.google.com/webstore/detail/webvr-api-emulation/gbdnpaebafagioggnhkacnaaahpiefil)|使用WebVR API Emulation扩展程序可以模拟VR设备用户的视角、位置等
 
+### 模型处理
+工具 | 说明
+----|----
+[Exporters](https://doc.babylonjs.com/resources/3dsmax#how-to-install-the-3ds-max-plugin) | 3DMax导gl插件
+[gltf-pipeline](https://github.com/AnalyticalGraphicsInc/gltf-pipeline)| glTF与glb互转工具
+[glTF-Tutorials](https://github.com/KhronosGroup/glTF-Tutorials/blob/master/gltfTutorial/README.md)|glTF格式教程
+
 ### 技术栈
 技术 | 说明 
 ----|-----
 [基本三角学](http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2FKhan%2Ftrigonometry.html)、[3D数学基础](https://book.douban.com/subject/1400419/)、[线性代数](http://immersivemath.com/ila/index.html)|
-[typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |
+[typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |[如何配置webpack与typescript一起工作](https://www.tslang.cn/docs/handbook/react-&-webpack.html)
 [HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)、[CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)、[Sass](https://sass-guidelin.es/zh/#section-38)|
 [three.js](https://threejs.org/)、[WebGL](https://book.douban.com/subject/25909351/)| 
 [aframe](https://aframe.io/)| A web framework for building virtual reality experiences

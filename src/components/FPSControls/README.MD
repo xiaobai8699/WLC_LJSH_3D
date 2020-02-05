@@ -12,4 +12,4 @@ if ( this.domElement === document ) {
 }
 ```
 上述代码对应的坐标系如下:
-![坐标系](https://github.com/lh2lyc/WLC_LJSH_3D/blob/master/src/components/FPSControls/asset/coordinate.png)
+![坐标系](https://github.com/lh2lyc/WLC_LJSH_3D/blob/master/src/components/FPSControls/asset/coor.png)

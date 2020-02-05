@@ -1,11 +1,11 @@
 ## 介绍
 
 ## 使用
-> npm install
-
-> npm run build-test
-
-> npm run start
+```
+ npm install
+ npm run build-test
+ npm run start
+ ```
 
 ## 目录结构
 

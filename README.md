@@ -45,8 +45,8 @@
 ### 技术栈
 技术 | 说明 
 ----|-----
-[基本三角学](http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2FKhan%2Ftrigonometry.html)|
-3D数学基础|[https://book.douban.com/subject/1400419/](https://book.douban.com/subject/1400419/) 、 [https://www.bilibili.com/video/av6731067?p=2](https://www.bilibili.com/video/av6731067?p=2)、 [http://immersivemath.com/ila/index.html](http://immersivemath.com/ila/index.html)
+[基本三角学](http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2FKhan%2Ftrigonometry.html)| 附加: [极坐标系](https://zh.wikipedia.org/wiki/%E6%9E%81%E5%9D%90%E6%A0%87%E7%B3%BB)、[球坐标系](https://zh.wikipedia.org/wiki/%E7%90%83%E5%BA%A7%E6%A8%99%E7%B3%BB)、[地理坐标系](https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%86%E5%9D%90%E6%A0%87%E7%B3%BB)
+3D数学基础|[https://book.douban.com/subject/1400419/](https://book.douban.com/subject/1400419/) 、 [https://www.bilibili.com/video/av6731067?p=2](https://www.bilibili.com/video/av6731067?p=2)、 [http://immersivemath.com/ila/index.html](http://immersivemath.com/ila/index.html) 
 [typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |[如何配置webpack与typescript一起工作](https://www.tslang.cn/docs/handbook/react-&-webpack.html)
 [HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)、[CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)、[Sass](https://sass-guidelin.es/zh/#section-38)|
 [three.js](https://threejs.org/)、[WebGL](https://book.douban.com/subject/25909351/)| 

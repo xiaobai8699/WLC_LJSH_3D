@@ -46,7 +46,7 @@
 技术 | 说明 
 ----|-----
 [基本三角学](http://open.163.com/newview/movie/courseintro?newurl=%2Fspecial%2FKhan%2Ftrigonometry.html)|
-3D数学基础|[https://book.douban.com/subject/1400419/](https://book.douban.com/subject/1400419/) [https://www.bilibili.com/video/av6731067?p=2](https://www.bilibili.com/video/av6731067?p=2) [http://immersivemath.com/ila/index.html](http://immersivemath.com/ila/index.html)
+3D数学基础|[https://book.douban.com/subject/1400419/](https://book.douban.com/subject/1400419/) 、 [https://www.bilibili.com/video/av6731067?p=2](https://www.bilibili.com/video/av6731067?p=2)、 [http://immersivemath.com/ila/index.html](http://immersivemath.com/ila/index.html)
 [typescript](https://www.tslang.cn/docs/home.html)、[javascript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide) |[如何配置webpack与typescript一起工作](https://www.tslang.cn/docs/handbook/react-&-webpack.html)
 [HTML](https://developer.mozilla.org/zh-CN/docs/Web/HTML)、[CSS](https://developer.mozilla.org/zh-CN/docs/Web/CSS)、[Sass](https://sass-guidelin.es/zh/#section-38)|
 [three.js](https://threejs.org/)、[WebGL](https://book.douban.com/subject/25909351/)| 

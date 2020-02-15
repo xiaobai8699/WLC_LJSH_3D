@@ -9,7 +9,7 @@ module.exports =  {
 
   //mode: "production",
 
-  entry: "./src/FPSControls.ts",
+  entry: "./src/app.ts",
 
   devtool: "source-map",
 
@@ -50,6 +50,10 @@ module.exports =  {
         from: "./src",
         to: ".",
         ignore: ["*.ts"]
+      },
+      {
+        from: "./asset",
+        to: "asset",
       }
     ]),
 

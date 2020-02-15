@@ -4,10 +4,11 @@
         "sourceMap": true,
         "noImplicitAny": true,
         "module": "commonjs",
-        "target": "es5",
+        "target": "es6",
+        "moduleResolution":"node",
         "jsx": "react"
     },
     "include": [
-        "./src"
+        "./src/**/*.ts"
     ]
 }

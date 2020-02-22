@@ -19,9 +19,10 @@
   },
   "homepage": "https://github.com/lh2lyc/WLC_LJSH_3D#readme",
   "dependencies": {
-    "three": "^0.113.2",
+    "@types/stats.js": "^0.17.0",
     "dat.gui": "^0.7.6",
-    "stats.js": "^0.17.0"
+    "stats.js": "^0.17.0",
+    "three": "^0.113.2"
   },
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",

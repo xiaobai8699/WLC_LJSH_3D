@@ -1,101 +1,62 @@
 
-import * as THREE from 'three';
-import { Asset } from './utils/Asset';
+import {Clock} from 'three';
 import {FPSControls} from './components/FPSControls/FPSControls';
+import {Core} from './core/Core';
+import {Loader} from './core/Loader';
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import {ThreeUtils} from './utils/ThreeUtils';
+import * as Stats from 'stats.js';
 
 export class App {
 
-    scene: THREE.Scene;
+    core: Core = new Core();
 
-    camera: THREE.PerspectiveCamera;
+    loader:Loader = new Loader();
 
-    renderer: THREE.WebGLRenderer;
+    stats: Stats = new Stats();
 
-    fpsControls: FPSControls;
+    fpsControl: FPSControls = new FPSControls(this.core.camera, this.core.renderer.domElement);
 
-    clock: THREE.Clock;
+    clock: Clock = new Clock();
 
-    initSence = () => {
+    start = ()=>{
 
-        const loader = new THREE.CubeTextureLoader();
-        const texture = loader.load(
-            [
-                Asset.skyboxUrl('px'),
-                Asset.skyboxUrl('nx'),
-                Asset.skyboxUrl('py'),
-                Asset.skyboxUrl('ny'),
-                Asset.skyboxUrl('pz'),
-                Asset.skyboxUrl('nz')
-            ]
-        );
+        document.body.appendChild(this.stats.dom);
 
-        this.scene = new THREE.Scene();
-        this.scene.background = texture;
+        this.core.renderer.setAnimationLoop(this.animationLoop);
+
+        this.loader.load(
+            
+            './asset/model/model.glb',
+
+            true,
+
+            undefined,
+
+            (glft:GLTF)=>{
+
+                this.core.scene.add(glft.scene);
+
+                console.log(`scene:${JSON.stringify(glft.scene.position)}`)
+               // ThreeUtils.cameraPositionToFit(this.core.camera, glft.scene);
+            },
+
+
+            (error:ErrorEvent)=>{
+
+                console.error(error);
+
+            });
     }
 
-    initCamera = () => {
+    animationLoop = ()=>{
 
-        this.camera = new THREE.PerspectiveCamera();
-        this.camera.near = 0.1;
-        this.camera.far = 64;
-        this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.position.set(0, 1.6, 0);
-        this.scene.add(this.camera);
+        this.stats.begin();
+        this.fpsControl.update(this.clock.getDelta());
+        this.core.renderer.render(this.core.scene, this.core.camera);
+        this.stats.end();
 
-    }
-
-    initRenderer = () => {
-        const canvas: HTMLCanvasElement = document.querySelector("#app");
-        const opt = {
-            canvas,
-            antialias: true,
-            logarithmicDepthBuffer: true,
-            autoUpdate: false
-        };
-        this.renderer = new THREE.WebGLRenderer(opt);
-        this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(window.devicePixelRatio);
-    }
-
-    addLights = () => {
-
-        let aLight = new THREE.AmbientLight("#FFFFFF");
-        aLight.intensity = 1.5;
-        this.scene.add(aLight);
-
-        const dLigth = new THREE.DirectionalLight();
-        dLigth.position.set(0, 6, 0);
-        this.scene.add(dLigth);
-
-    }
-
-    start = () => {
-        this.initSence();
-        this.initCamera();
-        this.initRenderer();
-        this.addLights();
-
-        const mat = new THREE.MeshStandardMaterial({color:0xff0000});
-        mat.wireframe = true;
-        const geo = new THREE.BoxGeometry(1,1,1);
-        const mesh = new THREE.Mesh(geo, mat);
-
-        mesh.position.set(0,0.5,-8);
-        this.scene.add(mesh);
-
-
-        this.fpsControls = new FPSControls(this.camera,this.renderer.domElement);
-    //  this.fpsControls.constrainVertical = true;
-    //     this.fpsControls.verticalMin = THREE.MathUtils.degToRad(135);
-    //     this.fpsControls.verticalMax = THREE.MathUtils.degToRad(45);
-        this.clock = new THREE.Clock();
-
-        this.renderer.setAnimationLoop(this.animationLoop);
-    }
-
-    animationLoop = () => {
-        this.fpsControls.update(this.clock.getDelta());
-        this.renderer.render(this.scene, this.camera);
+        console.log(`${JSON.stringify(this.core.camera.position)}`);
     }
 }
 

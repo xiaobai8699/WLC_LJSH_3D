@@ -44,8 +44,7 @@ export class Core {
         this.camera.near = 0.1;
         this.camera.far = 10000;
         this.camera.aspect = window.innerWidth / window.innerHeight;
-        this.camera.position.set(2741, 2, -1305);
-        this.scene.add(this.camera);
+       // this.scene.add(this.camera);
 
     }
 

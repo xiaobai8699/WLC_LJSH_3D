@@ -13,6 +13,8 @@ export class MoveControls {
 
     private keyboardState: KeyboardState;
 
+    public isMoving: boolean = false;
+
     constructor(scene?: Scene, target?: Object3D) {
 
         this.keyboardState = new KeyboardState();
@@ -27,13 +29,35 @@ export class MoveControls {
 
         var speed = delta * 20;
 
-        if (this.keyboardState.pressed(KeyboardState.LEFT)) this.target.translateX(-speed);
+        this.isMoving = false;
+        
+        if (this.keyboardState.pressed(KeyboardState.LEFT)) {
 
-        if (this.keyboardState.pressed(KeyboardState.RIGHT)) this.target.translateX(speed);
+            this.isMoving = true;
+            this.target.translateX(-speed);
 
-        if (this.keyboardState.pressed(KeyboardState.FRONT)) this.target.translateZ(-speed);
+        } 
 
-        if (this.keyboardState.pressed(KeyboardState.BACK))  this.target.translateZ(speed);
+        if (this.keyboardState.pressed(KeyboardState.RIGHT)) {
+
+            this.isMoving = true;
+            this.target.translateX(speed);
+
+        }
+
+        if (this.keyboardState.pressed(KeyboardState.FRONT)){
+
+            this.isMoving = true;
+            this.target.translateZ(-speed);
+
+        } 
+
+        if (this.keyboardState.pressed(KeyboardState.BACK))  {
+
+            this.isMoving = true;
+            this.target.translateZ(speed);
+
+        }
 
     }
 

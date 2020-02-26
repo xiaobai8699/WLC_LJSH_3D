@@ -42,7 +42,7 @@ export class Core {
 
         this.camera = new THREE.PerspectiveCamera();
         this.camera.near = 0.1;
-        this.camera.far = 10000;
+        this.camera.far = 500;
         this.camera.aspect = window.innerWidth / window.innerHeight;
        // this.scene.add(this.camera);
 

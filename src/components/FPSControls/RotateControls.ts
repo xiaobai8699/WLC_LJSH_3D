@@ -10,24 +10,25 @@ import {
     Vector3,
 } from 'three';
 
-import { KeyboardState } from '../KeyboardState';
+import {MouseState} from '../MouseState';
 
 export class RotateControls {
 
     public target: Object3D;
     private domElement: HTMLElement;
 
-    private keyboardState: KeyboardState = new KeyboardState();
-
-    public rotateChange: Function;
+    mouseState: MouseState;
 
     constructor(target: Object3D, domElement: HTMLElement) {
 
         this.target = target;
         this.domElement = domElement;
 
-        this.addEventListener();
-        
+        this.mouseState = new MouseState(domElement);
+        this.mouseState.onMouseDown = this.onMouseDown;
+        this.mouseState.onMouseUp = this.onMouseUp;
+        this.mouseState.onMouseMove = this.onMouseMove;
+
     }
 
     private euler: Euler = new Euler(0, 0, 0, "YXZ");
@@ -63,6 +64,8 @@ export class RotateControls {
 
     };
 
+    public isRotating: boolean = false;
+
     private endMouseX: number = 0;
 
     private onMouseUp = (event: MouseEvent) => {
@@ -74,13 +77,41 @@ export class RotateControls {
 
         this.endMouseX = event.pageX - this.domElement.offsetLeft - (this.domElement.offsetWidth / 2);
 
-        this.continueMovement();
+        this.isRotating = false;
 
+        this.calculateSpeed();
+
+    }
+
+    public minXRotate = MathUtils.degToRad(-45);
+    public maxXRotate = MathUtils.degToRad(45);
+
+    private onMouseMove = (event: any) => {
+
+        if (!this.mouseDragOn) return;
+
+        var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
+        var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
+
+        this.euler.setFromQuaternion(this.target.quaternion);
+
+        if(!this.disableYAxis) {
+            this.euler.y -= movementX * 0.002;
+        }
+        
+        if(!this.disableXAxis) {
+            this.euler.x -= movementY * 0.002;
+            this.euler.x = Math.max(this.minXRotate, Math.min(this.maxXRotate, this.euler.x));
+        }
+
+        this.target.quaternion.setFromEuler(this.euler);
+
+        this.isRotating = true;
     }
 
     private isRotateLeft: boolean = false;
 
-    private continueMovement = () => {
+    private calculateSpeed = () => {
 
         const endEuler = new Euler(0, 0, 0, "YXZ");
         endEuler.setFromQuaternion(this.target.quaternion);
@@ -132,37 +163,8 @@ export class RotateControls {
 
     }
 
-    public minXRotate = MathUtils.degToRad(-45);
-    public maxXRotate = MathUtils.degToRad(45);
-
-    private onMouseMove = (event: any) => {
-
-        if (!this.mouseDragOn) return;
-
-        var movementX = event.movementX || event.mozMovementX || event.webkitMovementX || 0;
-        var movementY = event.movementY || event.mozMovementY || event.webkitMovementY || 0;
-
-        this.euler.setFromQuaternion(this.target.quaternion);
-
-        if(!this.disableYAxis) {
-            this.euler.y -= movementX * 0.002;
-        }
-        
-        if(!this.disableXAxis) {
-            this.euler.x -= movementY * 0.002;
-            this.euler.x = Math.max(this.minXRotate, Math.min(this.maxXRotate, this.euler.x));
-        }
-
-        this.target.quaternion.setFromEuler(this.euler);
-
-        if( this.rotateChange) {
-            this.rotateChange(this.target);
-        }
-    }
-
-
     public update = (delta: number) => {
-
+        
         if (this.rotateSpeed > 0.001) {
 
             this.euler.setFromQuaternion(this.target.quaternion);
@@ -175,34 +177,17 @@ export class RotateControls {
             }
             this.target.quaternion.setFromEuler(this.euler);
 
-            if(this.rotateChange) {
-                this.rotateChange(this.target);
-            }
+            this.isRotating = true;
+
+        }else if(!this.mouseDragOn) {
+
+            this.isRotating = false;
         }
-    }
-
-
-    private contextmenu = (event: MouseEvent) => {
-
-        event.preventDefault();
-
-    }
-
-    private addEventListener = () => {
-
-        this.domElement.addEventListener('contextmenu', this.contextmenu, false);
-        this.domElement.addEventListener('mousemove', this.onMouseMove, false);
-        this.domElement.addEventListener('mousedown', this.onMouseDown, false);
-        this.domElement.addEventListener('mouseup', this.onMouseUp, false);
     }
 
     public dispose = () => {
 
-        this.domElement.removeEventListener('contextmenu', this.contextmenu, false);
-        this.domElement.removeEventListener('mousedown', this.onMouseDown, false);
-        this.domElement.removeEventListener('mousemove', this.onMouseMove, false);
-        this.domElement.removeEventListener('mouseup', this.onMouseUp, false);
+        this.mouseState.dispose();
 
-        this.keyboardState.dispose();
     }
 }

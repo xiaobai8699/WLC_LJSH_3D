@@ -30,8 +30,8 @@ export class FPSControls {
 
         this.moveControls.target.add(camera);
 
-        this.moveControls.target.position.set(2741, 1, -1310);
-        camera.position.set(0,2.5,12);
+        this.moveControls.target.position.set(2741, 2, -1310);
+        camera.position.set(0,0,0);
 
     }
 
@@ -39,6 +39,7 @@ export class FPSControls {
     public update = (delta: number) => {
 
         this.moveControls.update(delta);
+        this.rotateHeroControls.update(delta);
         this.rotateCameraControls.update(delta);
 
     }

@@ -31,6 +31,8 @@ export class FPSControls {
         this.moveControls.target.add(camera);
 
         this.moveControls.target.position.set(2741, 2, -1310);
+    //    this.moveControls.target.position.set(0, 6, 5);
+
         camera.position.set(0,0,0);
 
     }
@@ -48,5 +50,9 @@ export class FPSControls {
 
         this.rotateCameraControls.dispose();
         this.moveControls.dispose();
+    }
+
+    public isActive = ()=>{
+        return this.moveControls.isMoving || this.rotateHeroControls.isRotating || this.rotateCameraControls.isRotating;
     }
 }

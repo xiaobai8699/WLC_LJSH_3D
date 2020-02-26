@@ -27,6 +27,7 @@ export class RotateControls {
         this.domElement = domElement;
 
         this.addEventListener();
+        
     }
 
     private euler: Euler = new Euler(0, 0, 0, "YXZ");
@@ -162,8 +163,6 @@ export class RotateControls {
 
     public update = (delta: number) => {
 
-        
-
         if (this.rotateSpeed > 0.001) {
 
             this.euler.setFromQuaternion(this.target.quaternion);
@@ -179,9 +178,7 @@ export class RotateControls {
             if(this.rotateChange) {
                 this.rotateChange(this.target);
             }
-
         }
-
     }
 
 

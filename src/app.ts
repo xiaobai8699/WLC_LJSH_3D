@@ -1,6 +1,9 @@
+/*
+ * @Author: Li Hong (lh.work@qq.com) 
+ */
 
 import {Clock} from 'three';
-import {FPSControls} from './components/FPSControls/FPSControls';
+import {FPSControls} from './components/FPSControls/FPSControls'
 import {Core} from './core/Core';
 import {Loader} from './core/Loader';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -15,7 +18,7 @@ export class App {
 
     stats: Stats = new Stats();
 
-    fpsControl: FPSControls = new FPSControls(this.core.camera, this.core.renderer.domElement);
+    fpsControl: FPSControls = new FPSControls(this.core.scene,this.core.camera,this.core.renderer);
 
     clock: Clock = new Clock();
 
@@ -24,6 +27,20 @@ export class App {
         document.body.appendChild(this.stats.dom);
 
         this.core.renderer.setAnimationLoop(this.animationLoop);
+
+        this.loadModel();
+    }
+
+    animationLoop = ()=>{
+
+        this.stats.begin();
+        this.fpsControl.update(this.clock.getDelta());
+        this.core.renderer.render(this.core.scene, this.core.camera);
+        this.stats.end();
+
+    }
+
+    loadModel = () => {
 
         this.loader.load(
             
@@ -37,7 +54,6 @@ export class App {
 
                 this.core.scene.add(glft.scene);
 
-                console.log(`scene:${JSON.stringify(glft.scene.position)}`)
                // ThreeUtils.cameraPositionToFit(this.core.camera, glft.scene);
             },
 
@@ -47,16 +63,6 @@ export class App {
                 console.error(error);
 
             });
-    }
-
-    animationLoop = ()=>{
-
-        this.stats.begin();
-        this.fpsControl.update(this.clock.getDelta());
-        this.core.renderer.render(this.core.scene, this.core.camera);
-        this.stats.end();
-
-        console.log(`${JSON.stringify(this.core.camera.position)}`);
     }
 }
 

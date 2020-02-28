@@ -52,7 +52,7 @@ module.exports =  {
         ignore: ["*.ts"]
       },
       {
-        from: "./asset",
+        from: "./src/asset",
         to: "asset",
       }
     ]),

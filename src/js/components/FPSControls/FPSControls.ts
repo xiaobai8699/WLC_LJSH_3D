@@ -31,9 +31,9 @@ export class FPSControls {
         this.moveControls.target.add(camera);
 
         this.moveControls.target.position.set(2741, 2, -1310);
-    //    this.moveControls.target.position.set(0, 6, 5);
+        //this.moveControls.target.position.set(0, 2, 10);
 
-        camera.position.set(0,0,0);
+       // camera.position.set(0,0,0);
 
     }
 

@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { GLTFLoader, GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
-import { ResourceTracker } from '../asset/ResourceTracker';
+import { ResourceTracker } from '../components/ResourceTracker';
 
 export class Loader {
 
@@ -14,7 +14,7 @@ export class Loader {
 
         if (decompress) {
 
-            const dracoLoader = new DRACOLoader().setDecoderPath('./core/draco/');
+            const dracoLoader = new DRACOLoader().setDecoderPath('./js/lib/draco/');
             loader.setDRACOLoader(dracoLoader);
 
         }

@@ -1,6 +1,6 @@
 
 import * as THREE from 'three';
-import {Asset} from '../asset/Asset';
+import {Asset} from './Asset';
 
 export class Core {
 
@@ -22,20 +22,20 @@ export class Core {
 
     initSence = () => {
 
-        const loader = new THREE.CubeTextureLoader();
-        const texture = loader.load(
-            [
-                Asset.skyboxUrl('px'),
-                Asset.skyboxUrl('nx'),
-                Asset.skyboxUrl('py'),
-                Asset.skyboxUrl('ny'),
-                Asset.skyboxUrl('pz'),
-                Asset.skyboxUrl('nz')
-            ]
-        );
+        // const loader = new THREE.CubeTextureLoader();
+        // const texture = loader.load(
+        //     [
+        //         Asset.skyboxUrl('px'),
+        //         Asset.skyboxUrl('nx'),
+        //         Asset.skyboxUrl('py'),
+        //         Asset.skyboxUrl('ny'),
+        //         Asset.skyboxUrl('pz'),
+        //         Asset.skyboxUrl('nz')
+        //     ]
+        // );
 
         this.scene = new THREE.Scene();
-        this.scene.background = texture;
+        // this.scene.background = texture;
     }
 
     initCamera = () => {
@@ -44,6 +44,9 @@ export class Core {
         this.camera.near = 0.1;
         this.camera.far = 500;
         this.camera.aspect = window.innerWidth / window.innerHeight;
+        
+        //this.camera.position.set(0, 6, 5);
+
        // this.scene.add(this.camera);
 
     }

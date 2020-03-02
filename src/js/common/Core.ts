@@ -1,6 +1,6 @@
 
 import * as THREE from 'three';
-import {Asset} from './Asset';
+import { Asset } from './Asset';
 
 export class Core {
 
@@ -10,7 +10,7 @@ export class Core {
 
     renderer: THREE.WebGLRenderer;
 
-    constructor(){
+    constructor() {
 
         this.initSence();
         this.initCamera();
@@ -22,20 +22,20 @@ export class Core {
 
     initSence = () => {
 
-        // const loader = new THREE.CubeTextureLoader();
-        // const texture = loader.load(
-        //     [
-        //         Asset.skyboxUrl('px'),
-        //         Asset.skyboxUrl('nx'),
-        //         Asset.skyboxUrl('py'),
-        //         Asset.skyboxUrl('ny'),
-        //         Asset.skyboxUrl('pz'),
-        //         Asset.skyboxUrl('nz')
-        //     ]
-        // );
+        const loader = new THREE.CubeTextureLoader();
+        const texture = loader.load(
+            [
+                Asset.skyboxUrl('px'),
+                Asset.skyboxUrl('nx'),
+                Asset.skyboxUrl('py'),
+                Asset.skyboxUrl('ny'),
+                Asset.skyboxUrl('pz'),
+                Asset.skyboxUrl('nz')
+            ]
+        );
 
         this.scene = new THREE.Scene();
-        // this.scene.background = texture;
+        this.scene.background = texture;
     }
 
     initCamera = () => {
@@ -44,16 +44,16 @@ export class Core {
         this.camera.near = 0.1;
         this.camera.far = 500;
         this.camera.aspect = window.innerWidth / window.innerHeight;
-        
-        //this.camera.position.set(0, 6, 5);
 
-       // this.scene.add(this.camera);
+        this.camera.position.set(2741, 1.75, -1310);
+
+        this.scene.add(this.camera);
 
     }
 
     initRenderer = () => {
 
-        const canvas:HTMLCanvasElement = document.querySelector("#app");
+        const canvas: HTMLCanvasElement = document.querySelector("#app");
 
         const opt = {
             canvas,
@@ -70,7 +70,7 @@ export class Core {
 
     addLights = () => {
 
-       let aLight = new THREE.AmbientLight("#FFFFFF");
+        let aLight = new THREE.AmbientLight("#FFFFFF");
         aLight.intensity = 1.2;
         this.scene.add(aLight);
 
@@ -79,7 +79,7 @@ export class Core {
         dLigth.intensity = 2;
         this.scene.add(dLigth);*/
 
-    } 
+    }
 
     onWindowResize = () => {
 
@@ -90,6 +90,6 @@ export class Core {
 
         this.camera.aspect = w / h;
         this.camera.updateProjectionMatrix();
-      
+
     }
 }
